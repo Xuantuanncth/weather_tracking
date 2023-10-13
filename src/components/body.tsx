@@ -8,7 +8,7 @@ import Warning_icon from '@/assets/icon/warning.svg';
 const BodyData = () => {
     const [title, setTitle] = useState({ text: "RainFall", label: "Luong mua(mml)" });
     const [type_chart, setTypeChart] = useState('Line');
-    const [rainfall, setRainfall] = useState(['123','123','123','123','123','123','123','123','123','123','123']);
+    const [rainfall, setRainfall] = useState();
     const [waterFlow, setWaterFlow] = useState();
     const [isRainFall, setIsRainFall] = useState(1);
 
