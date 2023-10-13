@@ -50,7 +50,7 @@ const BodyData = () => {
         }
         const waterFlow_response = await fetch(WaterFlow_api).then((response) => response.json());
         if (Array.isArray(waterFlow_response)) {
-            setRainfall(waterFlow_response.filter(value => value !== null));
+            setWaterFlow(waterFlow_response.filter(value => value !== null));
         }
     }
 
