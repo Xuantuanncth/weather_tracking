@@ -8,8 +8,8 @@ import Warning_icon from '@/assets/icon/warning.svg';
 const BodyData = () => {
     const [title, setTitle] = useState({ text: "RainFall", label: "Luong mua(mml)" });
     const [type_chart, setTypeChart] = useState('Line');
-    const [rainfall, setRainfall] = useState();
-    const [waterFlow, setWaterFlow] = useState();
+    const [rainfall, setRainfall] = useState<(number | null)[]>();
+    const [waterFlow, setWaterFlow] = useState<(number | null)[]>();
     const [isRainFall, setIsRainFall] = useState(1);
 
     //Firebase api for rain fall and waterfall
@@ -45,9 +45,13 @@ const BodyData = () => {
 
     const getDataFromFirebase = async()=> {
         const rainFall_response = await fetch(rainFall_api).then((response) => response.json());
-        setRainfall(rainFall_response.filter(value => value !== null));
+        if (Array.isArray(rainFall_response)) {
+            setRainfall(rainFall_response.filter(value => value !== null));
+        }
         const waterFlow_response = await fetch(WaterFlow_api).then((response) => response.json());
-        setRainfall(waterFlow_response.filter(value => value !== null));
+        if (Array.isArray(waterFlow_response)) {
+            setRainfall(waterFlow_response.filter(value => value !== null));
+        }
     }
 
     useEffect(() =>{
