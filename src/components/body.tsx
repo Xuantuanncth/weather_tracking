@@ -14,7 +14,7 @@ const BodyData = () => {
 
     //Firebase api for rain fall and waterfall
     const rainFall_api = "https://rain-fall-2dd0a-default-rtdb.firebaseio.com/luong_mua.json";
-    const WaterFlow_api = "https://rain-fall-2dd0a-default-rtdb.firebaseio.com/luong_mua.json";
+    const WaterFlow_api = "https://rain-fall-2dd0a-default-rtdb.firebaseio.com/luu_luong_nuoc.json";
 
     const options = {
         responsive: true,
